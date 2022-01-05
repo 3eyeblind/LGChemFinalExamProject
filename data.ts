@@ -4,7 +4,6 @@ import {
 
 export async function load_file(file_path: string): Promise<any> {
   const content = await parseCsv(await Deno.readTextFile(file_path));
-  console.log(content);
   return content;
 }
 
@@ -15,7 +14,6 @@ export async function get_array() {
   // array = data[0]
 
   for (let i of content) {
-    console.log(i[1]);
     list.push(
       parseInt(
         i[1],
