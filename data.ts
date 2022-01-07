@@ -8,7 +8,7 @@ export async function load_file(file_path: string): Promise<any> {
 }
 
 export async function get_array() {
-  const content: string[][] = await load_file("./data_source.csv");
+  const content: string[][] = await load_file("./test_data.csv");
   const data: number[] = [];
   let list: number[] = [];
   // array = data[0]
