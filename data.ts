@@ -3,9 +3,7 @@ import {
 } from "https://deno.land/std@0.82.0/encoding/csv.ts";
 
 export async function load_file(file_path: string): Promise<string[][]> {
-  const parse = await parseCsv(await Deno.readTextFile(file_path));
-  const content: string[][] = <string[][]> parse;
-  return content;
+  return await parseCsv(await Deno.readTextFile(file_path)) as string[][];
 }
 
 export async function get_array(file_path: string) {
