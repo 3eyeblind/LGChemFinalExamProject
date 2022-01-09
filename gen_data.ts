@@ -5,7 +5,7 @@ const flags = parse(Deno.args);
 const numbers = "0123456789";
 
 const list_len = flags.l || 5;
-const file_path = flags.f || "./test_data.csv";
+const file_path = flags.f || "./ztest_data.csv";
 let str = "";
 
 for (let ll = 0; ll < list_len; ll++) {

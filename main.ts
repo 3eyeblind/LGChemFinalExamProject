@@ -32,9 +32,9 @@ for (let idx = 1; idx <= run_times; idx++) {
   run_records.push(rr);
 }
 
-let str = "";
+let str = `"run number","sort type","execution time"\n`;
 for (const rr of run_records) {
   console.log(rr);
   str = str + `${rr.run_number},${rr.sort},${rr.run_time}\n`;
 }
-Deno.writeTextFileSync("output.csv", str);
+Deno.writeTextFileSync(`zoutput-${Date.now()}.csv`, str);
