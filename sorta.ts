@@ -1,5 +1,6 @@
 import { get_array } from "./data.ts";
-export async function sort() {
+export async function sort(): Promise<number> {
+  const start_time = performance.now();
   const arr: number[] = await get_array();
   console.log(arr);
 
@@ -12,7 +13,8 @@ export async function sort() {
       pi = pi - 1;
     }
     arr[pi + 1] = current;
-
-    console.log(arr);
   }
+  console.log(arr);
+  const end_time = performance.now();
+  return end_time - start_time;
 }
