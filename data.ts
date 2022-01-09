@@ -7,8 +7,8 @@ export async function load_file(file_path: string): Promise<any> {
   return content;
 }
 
-export async function get_array() {
-  const content: string[][] = await load_file("./ztest_data.csv");
+export async function get_array(file_path: string) {
+  const content: string[][] = await load_file(file_path);
   const data: number[] = [];
   let list: number[] = [];
   // array = data[0]

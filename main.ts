@@ -2,9 +2,12 @@
 import { sort as sorta } from "./sorta.ts";
 import { sort as sortb } from "./sortb.ts";
 import { parse } from "https://deno.land/std/flags/mod.ts";
+import { get_array } from "./data.ts";
 
+const DATA_SOURCE = "./ztest_data.csv";
+const arr = await get_array(DATA_SOURCE);
 const flags = parse(Deno.args);
-let run_times = flags.n || 1;
+const run_times = flags.n || 1;
 
 interface run_record {
   sort: string;
@@ -17,7 +20,7 @@ const run_records: run_record[] = [];
 for (let idx = 1; idx <= run_times; idx++) {
   let rr: run_record = {
     sort: "insertion",
-    run_time: await sorta(),
+    run_time: sorta(arr),
     run_number: idx,
   };
 
@@ -25,7 +28,7 @@ for (let idx = 1; idx <= run_times; idx++) {
 
   rr = {
     sort: "b",
-    run_time: await sortb(),
+    run_time: sortb(arr),
     run_number: idx,
   };
 

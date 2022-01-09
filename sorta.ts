@@ -1,7 +1,5 @@
-import { get_array } from "./data.ts";
-export async function sort(): Promise<number> {
+export function sort(arr: number[]): number {
   const start_time = performance.now();
-  const arr: number[] = await get_array();
   console.log(arr);
 
   for (let index = 1; index < arr.length; index++) {
