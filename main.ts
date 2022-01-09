@@ -18,6 +18,7 @@ for (let idx = 1; idx <= run_times; idx++) {
     run_time: run_log.run_time,
     loop_count: run_log.loop_count,
     run_number: idx,
+    array_size: run_log.array_size,
   };
 
   run_records.push(rr);
@@ -27,14 +28,17 @@ for (let idx = 1; idx <= run_times; idx++) {
     run_time: run_log.run_time,
     loop_count: run_log.loop_count,
     run_number: idx,
+    array_size: run_log.array_size,
   };
 
   run_records.push(rr);
 }
 
-let str = `"run number","sort type","execution time","loop count"\n`;
+let str =
+  `"run number","sort type","array length","execution time","loop count"\n`;
 for (const rr of run_records) {
   console.log(rr);
-  str = str + `${rr.run_number},"${rr.sort}",${rr.run_time},${rr.loop_count}\n`;
+  str = str +
+    `${rr.run_number},"${rr.sort}",${rr.array_size},${rr.run_time},${rr.loop_count}\n`;
 }
 Deno.writeTextFileSync(`zoutput-${Date.now()}.csv`, str);

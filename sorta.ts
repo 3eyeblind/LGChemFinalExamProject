@@ -21,5 +21,6 @@ export function sort(arr: number[]): run_log {
   return {
     loop_count: LOOP_COUNT,
     run_time: end_time - start_time,
+    array_size: arr.length,
   };
 }
