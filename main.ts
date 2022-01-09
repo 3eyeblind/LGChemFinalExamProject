@@ -37,7 +37,7 @@ for (let idx = 1; idx <= run_times; idx++) {
 let str =
   `"run number","sort type","array length","execution time","loop count"\n`;
 for (const rr of run_records) {
-  console.log(rr);
+  // console.log(rr);
   str = str +
     `${rr.run_number},"${rr.sort}",${rr.array_size},${rr.run_time},${rr.loop_count}\n`;
 }
