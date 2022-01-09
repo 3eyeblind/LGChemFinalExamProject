@@ -1,5 +1,4 @@
 // load data
-import { get_array } from "./data.ts";
 import { sort as sorta } from "./sorta.ts";
 import { sort as sortb } from "./sortb.ts";
 import { parse } from "https://deno.land/std/flags/mod.ts";
@@ -15,11 +14,11 @@ interface run_record {
 
 const run_records: run_record[] = [];
 
-while (run_times > 0) {
+for (let idx = 1; idx <= run_times; idx++) {
   let rr: run_record = {
     sort: "insertion",
     run_time: await sorta(),
-    run_number: run_times,
+    run_number: idx,
   };
 
   run_records.push(rr);
@@ -27,12 +26,10 @@ while (run_times > 0) {
   rr = {
     sort: "b",
     run_time: await sortb(),
-    run_number: run_times,
+    run_number: idx,
   };
 
   run_records.push(rr);
-
-  run_times--;
 }
 
 let str = "";
