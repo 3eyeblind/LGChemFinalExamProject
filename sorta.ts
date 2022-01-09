@@ -1,6 +1,8 @@
-export function sort(arr: number[]): number {
+import { run_log } from "./types.ts";
+
+export function sort(arr: number[]): run_log {
   const start_time = performance.now();
-  console.log(arr);
+  let LOOP_COUNT = 0;
 
   for (let index = 1; index < arr.length; index++) {
     const current = arr[index];
@@ -9,10 +11,15 @@ export function sort(arr: number[]): number {
     while (pi >= 0 && arr[pi] > current) {
       arr[pi + 1] = arr[pi];
       pi = pi - 1;
+      LOOP_COUNT++;
     }
     arr[pi + 1] = current;
+    LOOP_COUNT++;
   }
-  console.log(arr);
   const end_time = performance.now();
-  return end_time - start_time;
+
+  return {
+    loop_count: LOOP_COUNT,
+    run_time: end_time - start_time,
+  };
 }
