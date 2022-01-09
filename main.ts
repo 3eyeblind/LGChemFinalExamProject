@@ -3,7 +3,7 @@ import { sort as sorta } from "./sorta.ts";
 import { sort as sortb } from "./sortb.ts";
 import { parse } from "https://deno.land/std/flags/mod.ts";
 import { get_array } from "./data.ts";
-import { run_log, run_record } from "./types.ts";
+import { run_record } from "./types.ts";
 
 const DATA_SOURCE = "./ztest_data.csv";
 const flags = parse(Deno.args);
