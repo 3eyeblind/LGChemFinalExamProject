@@ -24,7 +24,7 @@ for (let idx = 1; idx <= run_times; idx++) {
   run_records.push(rr);
   run_log = sortb(await get_array(DATA_SOURCE));
   rr = {
-    sort: "b",
+    sort: "selection",
     run_time: run_log.run_time,
     loop_count: run_log.loop_count,
     run_number: idx,
