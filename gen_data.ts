@@ -22,9 +22,9 @@ Deno.writeTextFileSync(file_path, str);
 
 function make_str(length: number) {
   let result = "";
-  let characters =
+  const characters =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  let charactersLength = characters.length;
+  const charactersLength = characters.length;
   for (let i = 0; i < length; i++) {
     result += characters.charAt(Math.floor(
       Math.random() *
